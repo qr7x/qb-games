@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><body><script>
+const base = "/gh/qr7x/qb-games/g.html";
+const hosts = [
+  "https://cdn.jsdelivr.net",
+  "https://gcore.jsdelivr.net",
+  "https://fastly.jsdelivr.net",
+  "https://jsdelivr.b-cdn.net",
+  "https://testingcf.jsdelivr.net"
+];
+
+(async () => {
+  for (const h of hosts) {
+    try {
+      const r = await fetch(h + base);
+      if (r.ok) {
+        document.write(await r.text());
+        break;
+      }
+    } catch (e) {}
+  }
+})();
+</script></body></html>
