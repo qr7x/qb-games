@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakridge University | Heritage & Innovation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        :root {
+            --primary: #002D62;
+            --secondary: #111C24;
+            --accent: #A6192E;
+            --gold: #C5A059;
+            --light: #F4F6F8;
+            --dark: #222222;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: #fff;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .top-bar {
+            background-color: var(--secondary);
+            color: #ddd;
+            padding: 0.4rem 5%;
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top-bar a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--gold);
+            sticky: top;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 45, 98, 0.75), rgba(0, 45, 98, 0.75)), 
+                        url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 1.5rem;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .stats {
+            background-color: var(--light);
+            display: flex;
+            justify-content: space-around;
+            padding: 2.5rem 10%;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            font-family: Arial, sans-serif;
+        }
+
+        .stat-item h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .stat-item p {
+            color: #555;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            font-family: Arial, sans-serif;
+            color: #555;
+        }
+
+        .about {
+            padding: 5rem 10%;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            font-family: Arial, sans-serif;
+        }
+
+        .about-text h2 {
+            font-family: 'Georgia', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .about-image {
+            flex: 1;
+            height: 350px;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+            border-left: 5px solid var(--gold);
+        }
+
+        .programs {
+            padding: 5rem 10%;
+            background-color: var(--light);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            border-top: 4px solid var(--primary);
+            font-family: Arial, sans-serif;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .news {
+            padding: 5rem 10%;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-item {
+            border: 1px solid #e0e0e0;
+        }
+
+        .news-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+            font-family: Arial, sans-serif;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .news-content h3 {
+            font-family: 'Georgia', serif;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+
+        .admissions {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 10%;
+            text-align: center;
+        }
+
+        .admissions h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .admissions p {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3rem 10% 1rem 10%;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>Oakridge University, Main Campus</span>
+        <div>
+            <a href="#">Students</a>
+            <a href="#">Faculty & Staff</a>
+            <a href="#">Alumni</a>
+            <a href="#">Library</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">Oakridge University</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#admissions">Admissions</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <h1>Leading Through Excellence</h1>
+        <p>Fostering intellect, innovation, and global service through foundational learning and groundbreaking research.</p>
+        <a href="#admissions" class="btn">Apply Today</a>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <h2>1888</h2>
+            <p>Year Founded</p>
+        </div>
+        <div class="stat-item">
+            <h2>11:1</h2>
+            <p>Student-to-Faculty Ratio</p>
+        </div>
+        <div class="stat-item">
+            <h2>150+</h2>
+            <p>Degree Programs</p>
+        </div>
+        <div class="stat-item">
+            <h2>$120M</h2>
+            <p>Annual Research Funding</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-text">
+            <h2>A Tradition of Academic Rigor</h2>
+            <p>Founded on the principles of critical inquiry and public leadership, Oakridge University provides an environment where ideas are challenged, tested, and transformed into real-world impact.</p>
+            <p>Our faculty consists of nationally recognized scholars, researchers, and practitioners dedicated to mentoring the next generation of industry and civic leaders.</p>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section class="programs" id="academics">
+        <h2 class="section-title">Academic Divisions</h2>
+        <p class="section-desc">Explore comprehensive undergraduate and graduate pathways designed for long-term career resilience.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>College of Liberal Arts</h3>
+                <p>Developing foundational perspectives in history, philosophy, languages, and social systems.</p>
+            </div>
+            <div class="card">
+                <h3>School of Business & Finance</h3>
+                <p>Preparing executives through focused studies in organizational strategy, economics, and analytics.</p>
+            </div>
+            <div class="card">
+                <h3>College of Engineering & Sciences</h3>
+                <p>Advancing physical computing, structural systems, and fundamental scientific methodologies.</p>
+            </div>
+            <div class="card">
+                <h3>School of Public Health</h3>
+                <p>Addressing global community wellness, healthcare delivery, and epidemiology.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="news" id="news">
+        <h2 class="section-title">Campus News</h2>
+        <p class="section-desc">Stay informed about institutional breakthroughs and community milestones.</p>
+        <div class="news-grid">
+            <div class="news-item">
+                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="news-content">
+                    <div class="news-date">Research Initiative</div>
+                    <h3>Oakridge Awarded $15M Grant for Sustainable Infrastructure</h3>
+                    <p>Faculty researchers in the Department of Civil Engineering will lead a multi-year study on urban resilience.</p>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="news-content">
+                    <div class="news-date">Campus Life</div>
+                    <h3>Annual Student Leadership Forum Panel Announced</h3>
+                    <p>Key leaders across enterprise and public policy gather to discuss emerging global challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="admissions" id="admissions">
+        <h2>Begin Your Journey</h2>
+        <p>Applications for incoming undergraduate and graduate cohorts are reviewed on a rolling basis. Take the next step toward your future.</p>
+        <a href="#" class="btn" style="background-color: var(--gold); color: var(--secondary);">Start Application</a>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Oakridge University</h4>
+                <p>1200 University Drive<br>Oakridge, State 90210</p>
+            </div>
+            <div class="footer-col">
+                <h4>Academics</h4>
+                <ul>
+                    <li><a href="#">Undergraduate Programs</a></li>
+                    <li><a href="#">Graduate Studies</a></li>
+                    <li><a href="#">Continuing Education</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Admissions</h4>
+                <ul>
+                    <li><a href="#">Tuition & Financial Aid</a></li>
+                    <li><a href="#">Campus Tours</a></li>
+                    <li><a href="#">Request Catalog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="year"></span> Oakridge University. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/edu.js"></script>
+
+</body>
+</html>
