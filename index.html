@@ -3,450 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oakridge University | Heritage & Innovation</title>
+    <meta name="description" content="Riverview Academy is a premier preparatory institution established in 1922, offering a rigorous curriculum focused on analytical thought, creative expression, and global citizenship.">
+    <meta name="keywords" content="Riverview Academy, private school, preparatory education, college placement, academic excellence, Highland District school, student hub, research academy">
+    <meta name="author" content="Riverview Academy Administration">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Riverview Academy | Excellence in Preparatory Education">
+    <meta property="og:description" content="Join a community dedicated to academic rigor and global citizenship. 98% college placement rate and 12:1 student-to-teacher ratio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.riverviewacademy.edu">
+    <meta property="og:site_name" content="Riverview Academy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Riverview Academy | Established 1922">
+    <meta name="twitter:description" content="Explore our digital ecosystem, writing labs, and world-class faculty directory.">
+    <meta name="theme-color" content="#004d40">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D5DPFL81S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2D5DPFL81S');
+    </script>
+    <title>Riverview Academy</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Georgia', 'Times New Roman', serif;
+        :root {
+            --primary: #004d40;
+            --accent: #c0ca33;
+            --dark: #212121;
+            --light-grey: #f5f5f5;
+            --bg: #ffffff;
+            --border: 3px solid var(--primary);
+            --transition: 0.3s ease;
         }
 
-        :root {
-            --primary: #002D62;
-            --secondary: #111C24;
-            --accent: #A6192E;
-            --gold: #C5A059;
-            --light: #F4F6F8;
-            --dark: #222222;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: var(--dark);
-            background-color: #fff;
+            background-color: var(--bg);
+            scroll-behavior: smooth;
             line-height: 1.6;
             display: none;
         }
 
-        .top-bar {
-            background-color: var(--secondary);
-            color: #ddd;
-            padding: 0.4rem 5%;
-            font-family: Arial, sans-serif;
-            font-size: 0.8rem;
-            display: flex;
-            justify-content: space-between;
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .top-bar a {
-            color: #ddd;
-            text-decoration: none;
-            margin-left: 1rem;
+        .animate {
+            animation: reveal 0.6s ease-out forwards;
         }
 
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem 5%;
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid var(--gold);
-            sticky: top;
+            padding: 20px 5%;
+            border-bottom: var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-            font-family: Arial, sans-serif;
-            font-size: 0.9rem;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--primary);
+            text-decoration: none;
         }
 
         .nav-links a {
-            color: white;
             text-decoration: none;
-            font-weight: 600;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 45, 98, 0.75), rgba(0, 45, 98, 0.75)), 
-                        url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin-bottom: 1.5rem;
-            font-family: Arial, sans-serif;
-        }
-
-        .btn {
-            background-color: var(--accent);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
+            color: var(--dark);
+            font-weight: 700;
+            margin-left: 25px;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            display: inline-block;
+            font-size: 0.9rem;
+            transition: color var(--transition);
         }
 
-        .stats {
-            background-color: var(--light);
-            display: flex;
-            justify-content: space-around;
-            padding: 2.5rem 10%;
-            text-align: center;
-            border-bottom: 1px solid #e0e0e0;
-            font-family: Arial, sans-serif;
+        .nav-links a:hover {
+            color: var(--accent);
         }
 
-        .stat-item h2 {
-            font-size: 2.5rem;
+        header {
+            padding: 120px 5%;
+            background-color: var(--light-grey);
+            border-bottom: var(--border);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin: 0;
+            line-height: 0.9;
+            letter-spacing: -3px;
             color: var(--primary);
         }
 
-        .stat-item p {
-            color: #555;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .hero-sub {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 20px 0 40px 0;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            border: var(--border);
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translate(-6px, -6px);
+            box-shadow: 6px 6px 0px var(--primary);
+        }
+
+        .section {
+            padding: 80px 5%;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            letter-spacing: -2px;
+            margin-bottom: 40px;
         }
 
-        .section-desc {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 2.5rem auto;
-            font-family: Arial, sans-serif;
-            color: #555;
-        }
-
-        .about {
-            padding: 5rem 10%;
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-            font-family: Arial, sans-serif;
-        }
-
-        .about-text h2 {
-            font-family: 'Georgia', serif;
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            color: #444;
-        }
-
-        .about-image {
-            flex: 1;
-            height: 350px;
-            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-            border-left: 5px solid var(--gold);
-        }
-
-        .programs {
-            padding: 5rem 10%;
-            background-color: var(--light);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            border: 1px solid #e0e0e0;
-            border-top: 4px solid var(--primary);
-            font-family: Arial, sans-serif;
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-family: 'Georgia', serif;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        .news {
-            padding: 5rem 10%;
-        }
-
-        .news-grid {
+        .grid-bento {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 15px;
         }
 
-        .news-item {
-            border: 1px solid #e0e0e0;
+        .bento-box {
+            border: var(--border);
+            padding: 30px;
+            transition: var(--transition);
         }
 
-        .news-img {
-            height: 180px;
-            background-size: cover;
-            background-position: center;
+        .bento-box:hover {
+            background: #08aa8e;
         }
 
-        .news-content {
-            padding: 1.5rem;
-            font-family: Arial, sans-serif;
-        }
-
-        .news-date {
-            font-size: 0.8rem;
-            color: var(--gold);
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .news-content h3 {
-            font-family: 'Georgia', serif;
-            color: var(--primary);
-            margin: 0.5rem 0;
-        }
-
-        .admissions {
-            background-color: var(--primary);
+        .bento-featured {
+            grid-column: span 2;
+            background: var(--primary);
             color: white;
-            padding: 5rem 10%;
+        }
+
+        @media (max-width: 768px) {
+            .bento-featured { grid-column: span 1; }
+            .footer-grid { grid-template-columns: 1fr !important; }
+        }
+
+        .directory-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            border-top: 1px solid #ccc;
+            transition: var(--transition);
+            gap: 15px;
+        }
+
+        .directory-row:hover {
+            background: var(--accent);
+            border-color: var(--primary);
+        }
+
+        .tag {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 4px 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 50px;
+            border-top: var(--border);
+            padding-top: 30px;
+        }
+
+        .stat-item b {
+            font-size: 2.5rem;
+            display: block;
+            line-height: 1;
+        }
+
+        .hidden-check {
+            display: none;
+        }
+
+        .expand-btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: #eee;
             text-align: center;
+            font-weight: 800;
+            cursor: pointer;
+            border: var(--border);
+            transition: background var(--transition);
         }
 
-        .admissions h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+        .expand-btn:hover {
+            background: #e0e0e0;
         }
 
-        .admissions p {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .hidden-check:checked ~ .expandable-content {
+            max-height: 1000px;
         }
 
         footer {
-            background-color: var(--secondary);
+            background: var(--dark);
             color: white;
-            padding: 3rem 10% 1rem 10%;
-            font-family: Arial, sans-serif;
-            font-size: 0.85rem;
+            padding: 80px 5%;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
         }
 
-        .footer-col h4 {
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-family: 'Georgia', serif;
+        .footer-logo {
+            color: white;
+            margin-bottom: 20px;
         }
 
-        .footer-col ul {
-            list-style: none;
+        .footer-heading {
+            color: var(--accent);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        .footer-col ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-col ul li a {
-            color: #ccc;
-            text-decoration: none;
-        }
-
-        .copyright {
-            text-align: center;
-            border-top: 1px solid #333;
-            padding-top: 1.5rem;
-            color: #888;
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.8rem;
+            opacity: 0.6;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <span>Oakridge University, Main Campus</span>
-        <div>
-            <a href="#">Students</a>
-            <a href="#">Faculty & Staff</a>
-            <a href="#">Alumni</a>
-            <a href="#">Library</a>
+<nav>
+    <a href="#" class="logo">RIVERVIEW</a>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#tools">Resources</a>
+        <a href="#faculty">Directory</a>
+        <a href="#admissions">Admissions</a>
+    </div>
+</nav>
+
+<header>
+    <div class="animate">
+        <div class="tag">ESTABLISHED 1922</div>
+        <h1 class="hero-title">RIVERVIEW<br>ACADEMY</h1>
+        <p class="hero-sub">Providing a rigorous preparatory education focused on analytical thought, creative expression, and global citizenship.</p>
+        <a href="#tools" class="cta-btn">STUDENT HUB</a>
+    </div>
+    
+    <div class="stats animate" style="animation-delay: 0.2s;">
+        <div class="stat-item"><b>12:1</b> Student Ratio</div>
+        <div class="stat-item"><b>98%</b> College Placement</div>
+        <div class="stat-item"><b>45</b> Elective Courses</div>
+    </div>
+</header>
+
+<section id="tools" class="section">
+    <h2 class="section-title">Digital Ecosystem</h2>
+    <div class="grid-bento">
+        <div class="bento-box bento-featured animate">
+            <h3>Central Archive</h3>
+            <p>Digital access to the full academic database including peer-reviewed journals, historical manuscripts, and modern literary collections.</p>
+            <a href="#" style="color: var(--accent); font-weight: 800; text-decoration: none; display: inline-block; margin-top: 15px;">OPEN REPOSITORY &rarr;</a>
+        </div>
+        <div class="bento-box animate">
+            <h3>Lab Access</h3>
+            <p>Secure remote access for virtual simulation data and scientific calculation tools.</p>
+        </div>
+        <div class="bento-box animate">
+            <h3>Writing Lab</h3>
+            <p>Advanced citation guides and structured logic templates for senior thesis development.</p>
+        </div>
+        <div class="bento-box bento-featured animate">
+            <h3>Campus Bulletin</h3>
+            <p>Spring Semester update: The new Riverview Center for Innovation is now open for weekend research hours. Faculty-led workshops begin Monday.</p>
         </div>
     </div>
+</section>
 
-    <header>
-        <div class="logo">Oakridge University</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#academics">Academics</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#admissions">Admissions</a></li>
-        </ul>
-    </header>
-
-    <section class="hero">
-        <h1>Leading Through Excellence</h1>
-        <p>Fostering intellect, innovation, and global service through foundational learning and groundbreaking research.</p>
-        <a href="#admissions" class="btn">Apply Today</a>
-    </section>
-
-    <section class="stats">
-        <div class="stat-item">
-            <h2>1888</h2>
-            <p>Year Founded</p>
+<section id="faculty" class="section" style="background: #fafafa; border-top: var(--border); border-bottom: var(--border);">
+    <h2 class="section-title">Staff Directory</h2>
+    
+    <div class="directory-row animate">
+        <div>
+            <strong style="font-size: 1.2rem; display: block;">Julian Thorne, PhD</strong>
+            <span style="font-size: 0.9rem; opacity: 0.8;">Head of School | Administration</span>
         </div>
-        <div class="stat-item">
-            <h2>11:1</h2>
-            <p>Student-to-Faculty Ratio</p>
-        </div>
-        <div class="stat-item">
-            <h2>150+</h2>
-            <p>Degree Programs</p>
-        </div>
-        <div class="stat-item">
-            <h2>$120M</h2>
-            <p>Annual Research Funding</p>
-        </div>
-    </section>
+        <div>j.thorne@riverview.edu</div>
+        <div style="font-weight: 800;">Office 1A</div>
+    </div>
 
-    <section class="about" id="about">
-        <div class="about-text">
-            <h2>A Tradition of Academic Rigor</h2>
-            <p>Founded on the principles of critical inquiry and public leadership, Oakridge University provides an environment where ideas are challenged, tested, and transformed into real-world impact.</p>
-            <p>Our faculty consists of nationally recognized scholars, researchers, and practitioners dedicated to mentoring the next generation of industry and civic leaders.</p>
+    <div class="directory-row animate">
+        <div>
+            <strong style="font-size: 1.2rem; display: block;">Sarah Al-Fayed</strong>
+            <span style="font-size: 0.9rem; opacity: 0.8;">Chair of Mathematics & Applied Physics</span>
         </div>
-        <div class="about-image"></div>
-    </section>
+        <div>s.alfayed@riverview.edu</div>
+        <div style="font-weight: 800;">Science Wing</div>
+    </div>
 
-    <section class="programs" id="academics">
-        <h2 class="section-title">Academic Divisions</h2>
-        <p class="section-desc">Explore comprehensive undergraduate and graduate pathways designed for long-term career resilience.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>College of Liberal Arts</h3>
-                <p>Developing foundational perspectives in history, philosophy, languages, and social systems.</p>
-            </div>
-            <div class="card">
-                <h3>School of Business & Finance</h3>
-                <p>Preparing executives through focused studies in organizational strategy, economics, and analytics.</p>
-            </div>
-            <div class="card">
-                <h3>College of Engineering & Sciences</h3>
-                <p>Advancing physical computing, structural systems, and fundamental scientific methodologies.</p>
-            </div>
-            <div class="card">
-                <h3>School of Public Health</h3>
-                <p>Addressing global community wellness, healthcare delivery, and epidemiology.</p>
-            </div>
+    <div class="directory-row animate">
+        <div>
+            <strong style="font-size: 1.2rem; display: block;">Marcus Vane</strong>
+            <span style="font-size: 0.9rem; opacity: 0.8;">Director of Fine Arts & Classical History</span>
         </div>
-    </section>
+        <div>m.vane@riverview.edu</div>
+        <div style="font-weight: 800;">Arts Pavilion</div>
+    </div>
+</section>
 
-    <section class="news" id="news">
-        <h2 class="section-title">Campus News</h2>
-        <p class="section-desc">Stay informed about institutional breakthroughs and community milestones.</p>
-        <div class="news-grid">
-            <div class="news-item">
-                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="news-content">
-                    <div class="news-date">Research Initiative</div>
-                    <h3>Oakridge Awarded $15M Grant for Sustainable Infrastructure</h3>
-                    <p>Faculty researchers in the Department of Civil Engineering will lead a multi-year study on urban resilience.</p>
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="news-content">
-                    <div class="news-date">Campus Life</div>
-                    <h3>Annual Student Leadership Forum Panel Announced</h3>
-                    <p>Key leaders across enterprise and public policy gather to discuss emerging global challenges.</p>
-                </div>
-            </div>
+<section id="admissions" class="section">
+    <input type="checkbox" id="more-info" class="hidden-check">
+    <label for="more-info" class="expand-btn">VIEW ADMISSIONS REQUIREMENTS</label>
+    <div class="expandable-content">
+        <div style="padding: 40px; border: var(--border); margin-top: 20px;">
+            <h3 style="margin-bottom: 10px;">Application Process</h3>
+            <p style="margin-bottom: 20px;">Prospective students must submit formal transcripts, a personal statement, and two faculty recommendations. Interviews are conducted during the Spring visit days.</p>
+            <h3 style="margin-bottom: 10px;">Financial Services</h3>
+            <p>Riverview Academy remains committed to a need-blind admission policy. Institutional grants are awarded based on demonstrated financial necessity.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="admissions" id="admissions">
-        <h2>Begin Your Journey</h2>
-        <p>Applications for incoming undergraduate and graduate cohorts are reviewed on a rolling basis. Take the next step toward your future.</p>
-        <a href="#" class="btn" style="background-color: var(--gold); color: var(--secondary);">Start Application</a>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Oakridge University</h4>
-                <p>1200 University Drive<br>Oakridge, State 90210</p>
-            </div>
-            <div class="footer-col">
-                <h4>Academics</h4>
-                <ul>
-                    <li><a href="#">Undergraduate Programs</a></li>
-                    <li><a href="#">Graduate Studies</a></li>
-                    <li><a href="#">Continuing Education</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Admissions</h4>
-                <ul>
-                    <li><a href="#">Tuition & Financial Aid</a></li>
-                    <li><a href="#">Campus Tours</a></li>
-                    <li><a href="#">Request Catalog</a></li>
-                </ul>
-            </div>
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="logo footer-logo">RIVERVIEW</div>
+            <p>800 Riverview Heights<br>Highland District<br>United States</p>
         </div>
-        <div class="copyright">
-            <p>&copy; <span id="year"></span> Oakridge University. All rights reserved.</p>
+        <div>
+            <h4 class="footer-heading">Portals</h4>
+            <p>Parent Access</p>
+            <p>Alumni Network</p>
+            <p>Career Center</p>
         </div>
-    </footer>
-
-    <script src="/edu.js"></script>
-
+        <div>
+            <h4 class="footer-heading">Contact</h4>
+            <p>Main Office: 555-0192</p>
+            <p>Admissions: 555-0195</p>
+            <p>Security: 555-0111</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        Riverview Academy. All institutional data current for the 2026 academic year.
+    </div>
+</footer>
 </body>
+<script src="edu.js" defer></script>
 </html>
